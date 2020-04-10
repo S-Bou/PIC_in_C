@@ -27,9 +27,9 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"12 D:\Projects\PIC\PIC_in_C\PruebaLeds.X\main.c
+"11 D:\Projects\PIC\PIC_in_C\PruebaLeds.X\main.c
 [v _initPuerto initPuerto `(v  1 e 1 0 ]
-"19
+"17
 [v _main main `(v  1 e 1 0 ]
 [s S34 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
@@ -69,13 +69,13 @@
 "4033
 [u S43 . 1 `S25 1 . 1 0 `S34 1 . 1 0 ]
 [v _TRISDbits TRISDbits `VES43  1 e 1 @3989 ]
-"19 D:\Projects\PIC\PIC_in_C\PruebaLeds.X\main.c
+"17 D:\Projects\PIC\PIC_in_C\PruebaLeds.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"28
+"26
 } 0
-"12
+"11
 [v _initPuerto initPuerto `(v  1 e 1 0 ]
 {
-"17
+"15
 } 0

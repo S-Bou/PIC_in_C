@@ -204,7 +204,7 @@ cinit 7FB6 7FBB CODE 7FB6 0
 %locals
 dist/default/debug\PruebaLeds.X.debug.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
-C:\Users\bouyo\AppData\Local\Temp\sdic.s
+C:\Users\bouyo\AppData\Local\Temp\s3os.s
 877 7FB6 0 CODE 0
 879 7FB6 0 CODE 0
 882 7FB6 0 CODE 0

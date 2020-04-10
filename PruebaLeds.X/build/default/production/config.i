@@ -5628,8 +5628,6 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 9 "config.c" 2
 
-# 1 "./config.h" 1
-# 10 "config.c" 2
 
 
 

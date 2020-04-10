@@ -16,7 +16,7 @@ cinit CODE 0 7FB6 7FB6 6 1
 text0 CODE 0 7FC4 7FC4 3C 1
 text1 CODE 0 7FBC 7FBC 8 1
 cstackCOMRAM COMRAM 1 1 1 2 1
-$C:\Users\bouyo\AppData\Local\Temp\sdic.o
+$C:\Users\bouyo\AppData\Local\Temp\s3os.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
@@ -68,12 +68,12 @@ $dist/default/debug\PruebaLeds.X.debug.o
 7FCA text0 CODE >22:D:\Projects\PIC\PIC_in_C\PruebaLeds.X\main.c
 7FE0 text0 CODE >23:D:\Projects\PIC\PIC_in_C\PruebaLeds.X\main.c
 7FE2 text0 CODE >24:D:\Projects\PIC\PIC_in_C\PruebaLeds.X\main.c
-7FB6 cinit CODE >877:C:\Users\bouyo\AppData\Local\Temp\sdic.s
-7FB6 cinit CODE >879:C:\Users\bouyo\AppData\Local\Temp\sdic.s
-7FB6 cinit CODE >882:C:\Users\bouyo\AppData\Local\Temp\sdic.s
-7FB6 cinit CODE >888:C:\Users\bouyo\AppData\Local\Temp\sdic.s
-7FB6 cinit CODE >890:C:\Users\bouyo\AppData\Local\Temp\sdic.s
-7FB8 cinit CODE >891:C:\Users\bouyo\AppData\Local\Temp\sdic.s
+7FB6 cinit CODE >877:C:\Users\bouyo\AppData\Local\Temp\s3os.s
+7FB6 cinit CODE >879:C:\Users\bouyo\AppData\Local\Temp\s3os.s
+7FB6 cinit CODE >882:C:\Users\bouyo\AppData\Local\Temp\s3os.s
+7FB6 cinit CODE >888:C:\Users\bouyo\AppData\Local\Temp\s3os.s
+7FB6 cinit CODE >890:C:\Users\bouyo\AppData\Local\Temp\s3os.s
+7FB8 cinit CODE >891:C:\Users\bouyo\AppData\Local\Temp\s3os.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -92,22 +92,22 @@ __Hspace_1 3 0 ABS 0 - dist/default/debug\PruebaLeds.X.debug.o
 __Hspace_2 0 0 ABS 0 - dist/default/debug\PruebaLeds.X.debug.o
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/debug\PruebaLeds.X.debug.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\PruebaLeds.X.debug.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\bouyo\AppData\Local\Temp\sdic.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\bouyo\AppData\Local\Temp\s3os.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\PruebaLeds.X.debug.o
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/debug\PruebaLeds.X.debug.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\PruebaLeds.X.debug.o
 _LATD F8C 0 ABS 0 - dist/default/debug\PruebaLeds.X.debug.o
-___sp 0 0 STACK 2 stack C:\Users\bouyo\AppData\Local\Temp\sdic.o
+___sp 0 0 STACK 2 stack C:\Users\bouyo\AppData\Local\Temp\s3os.o
 _main 7FC4 0 CODE 0 text0 dist/default/debug\PruebaLeds.X.debug.o
-start 0 0 CODE 0 init C:\Users\bouyo\AppData\Local\Temp\sdic.o
+start 0 0 CODE 0 init C:\Users\bouyo\AppData\Local\Temp\s3os.o
 __size_of_main 0 0 ABS 0 - dist/default/debug\PruebaLeds.X.debug.o
 __Hpowerup 0 0 CODE 0 powerup dist/default/debug\PruebaLeds.X.debug.o
 __size_of_initPuerto 0 0 ABS 0 - dist/default/debug\PruebaLeds.X.debug.o
-__accesstop 60 0 ABS 0 - C:\Users\bouyo\AppData\Local\Temp\sdic.o
-intlevel0 0 0 CODE 0 text C:\Users\bouyo\AppData\Local\Temp\sdic.o
-intlevel1 0 0 CODE 0 text C:\Users\bouyo\AppData\Local\Temp\sdic.o
-intlevel2 0 0 CODE 0 text C:\Users\bouyo\AppData\Local\Temp\sdic.o
-intlevel3 0 0 CODE 0 text C:\Users\bouyo\AppData\Local\Temp\sdic.o
+__accesstop 60 0 ABS 0 - C:\Users\bouyo\AppData\Local\Temp\s3os.o
+intlevel0 0 0 CODE 0 text C:\Users\bouyo\AppData\Local\Temp\s3os.o
+intlevel1 0 0 CODE 0 text C:\Users\bouyo\AppData\Local\Temp\s3os.o
+intlevel2 0 0 CODE 0 text C:\Users\bouyo\AppData\Local\Temp\s3os.o
+intlevel3 0 0 CODE 0 text C:\Users\bouyo\AppData\Local\Temp\s3os.o
 __CFG_USBDIV$1 0 0 ABS 0 - dist/default/debug\PruebaLeds.X.debug.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\PruebaLeds.X.debug.o
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/debug\PruebaLeds.X.debug.o
@@ -117,8 +117,8 @@ __CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/debug\PruebaLeds.X.debug.o
 __CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/debug\PruebaLeds.X.debug.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/debug\PruebaLeds.X.debug.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/debug\PruebaLeds.X.debug.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\bouyo\AppData\Local\Temp\sdic.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\bouyo\AppData\Local\Temp\sdic.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\bouyo\AppData\Local\Temp\s3os.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\bouyo\AppData\Local\Temp\s3os.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/debug\PruebaLeds.X.debug.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\PruebaLeds.X.debug.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\PruebaLeds.X.debug.o
@@ -151,7 +151,7 @@ __Htext0 0 0 ABS 0 text0 dist/default/debug\PruebaLeds.X.debug.o
 __Htext1 0 0 ABS 0 text1 dist/default/debug\PruebaLeds.X.debug.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\PruebaLeds.X.debug.o
 __Hbigram 0 0 ABS 0 bigram dist/default/debug\PruebaLeds.X.debug.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\bouyo\AppData\Local\Temp\sdic.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\bouyo\AppData\Local\Temp\s3os.o
 __Hcomram 0 0 ABS 0 comram dist/default/debug\PruebaLeds.X.debug.o
 __Hconfig 30000E 0 CONFIG 0 config dist/default/debug\PruebaLeds.X.debug.o
 __CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/default/debug\PruebaLeds.X.debug.o
@@ -216,8 +216,8 @@ __Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\PruebaLeds.X.debug.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/debug\PruebaLeds.X.debug.o
 _initPuerto 7FBC 0 CODE 0 text1 dist/default/debug\PruebaLeds.X.debug.o
 __CFG_CCP2MX$ON 0 0 ABS 0 - dist/default/debug\PruebaLeds.X.debug.o
-stackhi 7FF 0 ABS 0 - C:\Users\bouyo\AppData\Local\Temp\sdic.o
-stacklo 60 0 ABS 0 - C:\Users\bouyo\AppData\Local\Temp\sdic.o
+stackhi 7FF 0 ABS 0 - C:\Users\bouyo\AppData\Local\Temp\s3os.o
+stacklo 60 0 ABS 0 - C:\Users\bouyo\AppData\Local\Temp\s3os.o
 __Lintcode 0 0 CODE 0 intcode dist/default/debug\PruebaLeds.X.debug.o
 __Lintret 0 0 ABS 0 intret dist/default/debug\PruebaLeds.X.debug.o
 __Lirdata 0 0 CODE 0 irdata dist/default/debug\PruebaLeds.X.debug.o
@@ -239,7 +239,7 @@ __pcinit 7FB6 0 CODE 0 cinit dist/default/debug\PruebaLeds.X.debug.o
 __ptext0 7FC4 0 CODE 0 text0 dist/default/debug\PruebaLeds.X.debug.o
 __ptext1 7FBC 0 CODE 0 text1 dist/default/debug\PruebaLeds.X.debug.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/debug\PruebaLeds.X.debug.o
-__ramtop 800 0 RAM 0 ramtop C:\Users\bouyo\AppData\Local\Temp\sdic.o
+__ramtop 800 0 RAM 0 ramtop C:\Users\bouyo\AppData\Local\Temp\s3os.o
 __end_of_initPuerto 7FC4 0 CODE 0 text1 dist/default/debug\PruebaLeds.X.debug.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/debug\PruebaLeds.X.debug.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\PruebaLeds.X.debug.o

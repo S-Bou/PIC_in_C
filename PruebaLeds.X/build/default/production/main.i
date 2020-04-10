@@ -14,7 +14,6 @@
 
 
 
-
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5626,17 +5625,16 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 9 "main.c" 2
+# 8 "main.c" 2
 
 # 1 "./config.h" 1
-# 10 "main.c" 2
+# 9 "main.c" 2
 
 
 void initPuerto()
 {
     LATD = 0;
     TRISDbits.RD1 = 0;
-
 }
 
 void main(void) {
@@ -5644,8 +5642,8 @@ void main(void) {
     initPuerto();
     while(1){
         PORTDbits.RD1 = 1;
-        _delay((unsigned long)((1000)*(20000000/4000.0)));
+        _delay((unsigned long)((100)*(20000000/4000.0)));
         PORTDbits.RD1 = 0;
-        _delay((unsigned long)((1000)*(20000000/4000.0)));
+        _delay((unsigned long)((100)*(20000000/4000.0)));
     }
 }
