@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Fri Apr 10 22:26:37 2020
+                                                                                               Fri Apr 10 23:43:58 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F4550
@@ -57,197 +57,266 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
     43                           ; Code-generator required, PIC18F4550 Definitions
     44                           ; 
     45                           ; SFR Addresses
-    46  0000                     _PORTDbits	set	3971
-    47  0000                     _TRISDbits	set	3989
-    48  0000                     _LATD	set	3980
-    49                           
-    50                           ; #config settings
-    51  0000                     
-    52                           	psect	cinit
-    53  007FB6                     __pcinit:
-    54                           	opt callstack 0
-    55  007FB6                     start_initialization:
-    56                           	opt callstack 0
-    57  007FB6                     __initialization:
-    58                           	opt callstack 0
-    59  007FB6                     end_of_initialization:
-    60                           	opt callstack 0
-    61  007FB6                     __end_of__initialization:
-    62                           	opt callstack 0
-    63  007FB6  0100               	movlb	0
-    64  007FB8  EFE2  F03F         	goto	_main	;jump to C main() function
-    65                           
-    66                           	psect	cstackCOMRAM
-    67  000001                     __pcstackCOMRAM:
-    68                           	opt callstack 0
-    69  000001                     ??_main:
-    70                           
-    71                           ; 1 bytes @ 0x0
-    72  000001                     	ds	2
-    73                           
-    74 ;;
-    75 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
-    76 ;;
-    77 ;; *************** function _main *****************
-    78 ;; Defined at:
-    79 ;;		line 17 in file "main.c"
-    80 ;; Parameters:    Size  Location     Type
-    81 ;;		None
-    82 ;; Auto vars:     Size  Location     Type
-    83 ;;		None
-    84 ;; Return value:  Size  Location     Type
-    85 ;;                  1    wreg      void 
-    86 ;; Registers used:
-    87 ;;		wreg, status,2, cstack
-    88 ;; Tracked objects:
-    89 ;;		On entry : 0/0
-    90 ;;		On exit  : 0/0
-    91 ;;		Unchanged: 0/0
-    92 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-    93 ;;      Params:         0       0       0       0       0       0       0       0       0
-    94 ;;      Locals:         0       0       0       0       0       0       0       0       0
-    95 ;;      Temps:          2       0       0       0       0       0       0       0       0
-    96 ;;      Totals:         2       0       0       0       0       0       0       0       0
-    97 ;;Total ram usage:        2 bytes
-    98 ;; Hardware stack levels required when called:    1
-    99 ;; This function calls:
-   100 ;;		_initPuerto
-   101 ;; This function is called by:
-   102 ;;		Startup code after reset
-   103 ;; This function uses a non-reentrant model
-   104 ;;
-   105                           
-   106                           	psect	text0
-   107  007FC4                     __ptext0:
-   108                           	opt callstack 0
-   109  007FC4                     _main:
-   110                           	opt callstack 30
-   111  007FC4                     
-   112                           ;main.c: 19:     initPuerto();
-   113  007FC4  ECDE  F03F         	call	_initPuerto	;wreg free
-   114  007FC8                     l701:
-   115                           
-   116                           ;main.c: 21:         PORTDbits.RD1 = 1;
-   117  007FC8  8283               	bsf	131,1,c	;volatile
-   118  007FCA                     
-   119                           ;main.c: 22:         _delay((unsigned long)((100)*(20000000/4000.0)));
-   120  007FCA  0E03               	movlw	3
-   121  007FCC  6E02               	movwf	(??_main+1)^0,c
-   122  007FCE  0E8A               	movlw	138
-   123  007FD0  6E01               	movwf	??_main^0,c
-   124  007FD2  0E56               	movlw	86
-   125  007FD4                     u17:
-   126  007FD4  2EE8               	decfsz	wreg,f,c
-   127  007FD6  D7FE               	bra	u17
-   128  007FD8  2E01               	decfsz	??_main^0,f,c
-   129  007FDA  D7FC               	bra	u17
-   130  007FDC  2E02               	decfsz	(??_main+1)^0,f,c
-   131  007FDE  D7FA               	bra	u17
-   132  007FE0                     
-   133                           ;main.c: 23:         PORTDbits.RD1 = 0;
-   134  007FE0  9283               	bcf	131,1,c	;volatile
-   135  007FE2                     
-   136                           ;main.c: 24:         _delay((unsigned long)((100)*(20000000/4000.0)));
-   137  007FE2  0E03               	movlw	3
-   138  007FE4  6E02               	movwf	(??_main+1)^0,c
-   139  007FE6  0E8A               	movlw	138
-   140  007FE8  6E01               	movwf	??_main^0,c
-   141  007FEA  0E56               	movlw	86
-   142  007FEC                     u27:
-   143  007FEC  2EE8               	decfsz	wreg,f,c
-   144  007FEE  D7FE               	bra	u27
-   145  007FF0  2E01               	decfsz	??_main^0,f,c
-   146  007FF2  D7FC               	bra	u27
-   147  007FF4  2E02               	decfsz	(??_main+1)^0,f,c
-   148  007FF6  D7FA               	bra	u27
-   149  007FF8  EFE4  F03F         	goto	l701
-   150  007FFC  EF00  F000         	goto	start
-   151  008000                     __end_of_main:
-   152                           	opt callstack 0
-   153                           
-   154 ;; *************** function _initPuerto *****************
-   155 ;; Defined at:
-   156 ;;		line 11 in file "main.c"
-   157 ;; Parameters:    Size  Location     Type
-   158 ;;		None
-   159 ;; Auto vars:     Size  Location     Type
-   160 ;;		None
-   161 ;; Return value:  Size  Location     Type
-   162 ;;                  1    wreg      void 
-   163 ;; Registers used:
-   164 ;;		wreg, status,2
-   165 ;; Tracked objects:
-   166 ;;		On entry : 0/0
-   167 ;;		On exit  : 0/0
-   168 ;;		Unchanged: 0/0
-   169 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   170 ;;      Params:         0       0       0       0       0       0       0       0       0
-   171 ;;      Locals:         0       0       0       0       0       0       0       0       0
-   172 ;;      Temps:          0       0       0       0       0       0       0       0       0
-   173 ;;      Totals:         0       0       0       0       0       0       0       0       0
-   174 ;;Total ram usage:        0 bytes
-   175 ;; Hardware stack levels used:    1
-   176 ;; This function calls:
-   177 ;;		Nothing
-   178 ;; This function is called by:
-   179 ;;		_main
-   180 ;; This function uses a non-reentrant model
-   181 ;;
-   182                           
-   183                           	psect	text1
-   184  007FBC                     __ptext1:
-   185                           	opt callstack 0
-   186  007FBC                     _initPuerto:
-   187                           	opt callstack 30
-   188  007FBC                     
-   189                           ;main.c: 13:     LATD = 0;
-   190  007FBC  0E00               	movlw	0
-   191  007FBE  6E8C               	movwf	140,c	;volatile
-   192  007FC0                     
-   193                           ;main.c: 14:     TRISDbits.RD1 = 0;
-   194  007FC0  9295               	bcf	149,1,c	;volatile
-   195  007FC2  0012               	return		;funcret
-   196  007FC4                     __end_of_initPuerto:
-   197                           	opt callstack 0
-   198  0000                     
-   199                           	psect	rparam
-   200  0000                     tosu	equ	0xFFF
-   201                           tosh	equ	0xFFE
-   202                           tosl	equ	0xFFD
-   203                           stkptr	equ	0xFFC
-   204                           pclatu	equ	0xFFB
-   205                           pclath	equ	0xFFA
-   206                           pcl	equ	0xFF9
-   207                           tblptru	equ	0xFF8
-   208                           tblptrh	equ	0xFF7
-   209                           tblptrl	equ	0xFF6
-   210                           tablat	equ	0xFF5
-   211                           prodh	equ	0xFF4
-   212                           prodl	equ	0xFF3
-   213                           indf0	equ	0xFEF
-   214                           postinc0	equ	0xFEE
-   215                           postdec0	equ	0xFED
-   216                           preinc0	equ	0xFEC
-   217                           plusw0	equ	0xFEB
-   218                           fsr0h	equ	0xFEA
-   219                           fsr0l	equ	0xFE9
-   220                           wreg	equ	0xFE8
-   221                           indf1	equ	0xFE7
-   222                           postinc1	equ	0xFE6
-   223                           postdec1	equ	0xFE5
-   224                           preinc1	equ	0xFE4
-   225                           plusw1	equ	0xFE3
-   226                           fsr1h	equ	0xFE2
-   227                           fsr1l	equ	0xFE1
-   228                           bsr	equ	0xFE0
-   229                           indf2	equ	0xFDF
-   230                           postinc2	equ	0xFDE
-   231                           postdec2	equ	0xFDD
-   232                           preinc2	equ	0xFDC
-   233                           plusw2	equ	0xFDB
-   234                           fsr2h	equ	0xFDA
-   235                           fsr2l	equ	0xFD9
-   236                           status	equ	0xFD8
+    46  0000                     _PORTEbits	set	3972
+    47  0000                     _PORTDbits	set	3971
+    48  0000                     _PORTCbits	set	3970
+    49  0000                     _PORTBbits	set	3969
+    50  0000                     _PORTAbits	set	3968
+    51  0000                     _TRISEbits	set	3990
+    52  0000                     _TRISDbits	set	3989
+    53  0000                     _TRISCbits	set	3988
+    54  0000                     _TRISBbits	set	3987
+    55  0000                     _TRISAbits	set	3986
+    56  0000                     _LATE	set	3981
+    57  0000                     _LATD	set	3980
+    58  0000                     _LATC	set	3979
+    59  0000                     _LATB	set	3978
+    60  0000                     _LATA	set	3977
+    61  0000                     _ADCON1bits	set	4033
+    62                           
+    63                           ; #config settings
+    64  0000                     
+    65                           	psect	cinit
+    66  007F8A                     __pcinit:
+    67                           	opt callstack 0
+    68  007F8A                     start_initialization:
+    69                           	opt callstack 0
+    70  007F8A                     __initialization:
+    71                           	opt callstack 0
+    72  007F8A                     end_of_initialization:
+    73                           	opt callstack 0
+    74  007F8A                     __end_of__initialization:
+    75                           	opt callstack 0
+    76  007F8A  0100               	movlb	0
+    77  007F8C  EFDA  F03F         	goto	_main	;jump to C main() function
+    78                           
+    79                           	psect	cstackCOMRAM
+    80  000001                     __pcstackCOMRAM:
+    81                           	opt callstack 0
+    82  000001                     ??_main:
+    83                           
+    84                           ; 1 bytes @ 0x0
+    85  000001                     	ds	2
+    86                           
+    87 ;;
+    88 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+    89 ;;
+    90 ;; *************** function _main *****************
+    91 ;; Defined at:
+    92 ;;		line 29 in file "main.c"
+    93 ;; Parameters:    Size  Location     Type
+    94 ;;		None
+    95 ;; Auto vars:     Size  Location     Type
+    96 ;;		None
+    97 ;; Return value:  Size  Location     Type
+    98 ;;                  1    wreg      void 
+    99 ;; Registers used:
+   100 ;;		wreg, status,2, cstack
+   101 ;; Tracked objects:
+   102 ;;		On entry : 0/0
+   103 ;;		On exit  : 0/0
+   104 ;;		Unchanged: 0/0
+   105 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   106 ;;      Params:         0       0       0       0       0       0       0       0       0
+   107 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   108 ;;      Temps:          2       0       0       0       0       0       0       0       0
+   109 ;;      Totals:         2       0       0       0       0       0       0       0       0
+   110 ;;Total ram usage:        2 bytes
+   111 ;; Hardware stack levels required when called:    1
+   112 ;; This function calls:
+   113 ;;		_initPuerto
+   114 ;; This function is called by:
+   115 ;;		Startup code after reset
+   116 ;; This function uses a non-reentrant model
+   117 ;;
+   118                           
+   119                           	psect	text0
+   120  007FB4                     __ptext0:
+   121                           	opt callstack 0
+   122  007FB4                     _main:
+   123                           	opt callstack 30
+   124  007FB4                     
+   125                           ;main.c: 31:     initPuerto();
+   126  007FB4  ECC8  F03F         	call	_initPuerto	;wreg free
+   127  007FB8                     l735:
+   128                           
+   129                           ;main.c: 33:         PORTAbits.RA1 = 1;
+   130  007FB8  8280               	bsf	128,1,c	;volatile
+   131  007FBA                     
+   132                           ;main.c: 34:         PORTBbits.RB1 = 1;
+   133  007FBA  8281               	bsf	129,1,c	;volatile
+   134  007FBC                     
+   135                           ;main.c: 35:         PORTCbits.RC1 = 1;
+   136  007FBC  8282               	bsf	130,1,c	;volatile
+   137  007FBE                     
+   138                           ;main.c: 36:         PORTDbits.RD1 = 1;
+   139  007FBE  8283               	bsf	131,1,c	;volatile
+   140  007FC0                     
+   141                           ;main.c: 37:         PORTEbits.RE1 = 1;
+   142  007FC0  8284               	bsf	132,1,c	;volatile
+   143  007FC2                     
+   144                           ;main.c: 38:         _delay((unsigned long)((200)*(20000000/4000.0)));
+   145  007FC2  0E06               	movlw	6
+   146  007FC4  6E02               	movwf	(??_main+1)^0,c
+   147  007FC6  0E13               	movlw	19
+   148  007FC8  6E01               	movwf	??_main^0,c
+   149  007FCA  0EAE               	movlw	174
+   150  007FCC                     u17:
+   151  007FCC  2EE8               	decfsz	wreg,f,c
+   152  007FCE  D7FE               	bra	u17
+   153  007FD0  2E01               	decfsz	??_main^0,f,c
+   154  007FD2  D7FC               	bra	u17
+   155  007FD4  2E02               	decfsz	(??_main+1)^0,f,c
+   156  007FD6  D7FA               	bra	u17
+   157  007FD8                     
+   158                           ;main.c: 39:         PORTAbits.RA1 = 0;
+   159  007FD8  9280               	bcf	128,1,c	;volatile
+   160  007FDA                     
+   161                           ;main.c: 40:         PORTBbits.RB1 = 0;
+   162  007FDA  9281               	bcf	129,1,c	;volatile
+   163  007FDC                     
+   164                           ;main.c: 41:         PORTCbits.RC1 = 0;
+   165  007FDC  9282               	bcf	130,1,c	;volatile
+   166  007FDE                     
+   167                           ;main.c: 42:         PORTDbits.RD1 = 0;
+   168  007FDE  9283               	bcf	131,1,c	;volatile
+   169  007FE0                     
+   170                           ;main.c: 43:         PORTEbits.RE1 = 0;
+   171  007FE0  9284               	bcf	132,1,c	;volatile
+   172  007FE2                     
+   173                           ;main.c: 44:         _delay((unsigned long)((200)*(20000000/4000.0)));
+   174  007FE2  0E06               	movlw	6
+   175  007FE4  6E02               	movwf	(??_main+1)^0,c
+   176  007FE6  0E13               	movlw	19
+   177  007FE8  6E01               	movwf	??_main^0,c
+   178  007FEA  0EAE               	movlw	174
+   179  007FEC                     u27:
+   180  007FEC  2EE8               	decfsz	wreg,f,c
+   181  007FEE  D7FE               	bra	u27
+   182  007FF0  2E01               	decfsz	??_main^0,f,c
+   183  007FF2  D7FC               	bra	u27
+   184  007FF4  2E02               	decfsz	(??_main+1)^0,f,c
+   185  007FF6  D7FA               	bra	u27
+   186  007FF8  EFDC  F03F         	goto	l735
+   187  007FFC  EF00  F000         	goto	start
+   188  008000                     __end_of_main:
+   189                           	opt callstack 0
+   190                           
+   191 ;; *************** function _initPuerto *****************
+   192 ;; Defined at:
+   193 ;;		line 14 in file "main.c"
+   194 ;; Parameters:    Size  Location     Type
+   195 ;;		None
+   196 ;; Auto vars:     Size  Location     Type
+   197 ;;		None
+   198 ;; Return value:  Size  Location     Type
+   199 ;;                  1    wreg      void 
+   200 ;; Registers used:
+   201 ;;		wreg, status,2
+   202 ;; Tracked objects:
+   203 ;;		On entry : 0/0
+   204 ;;		On exit  : 0/0
+   205 ;;		Unchanged: 0/0
+   206 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   207 ;;      Params:         0       0       0       0       0       0       0       0       0
+   208 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   209 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   210 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   211 ;;Total ram usage:        0 bytes
+   212 ;; Hardware stack levels used:    1
+   213 ;; This function calls:
+   214 ;;		Nothing
+   215 ;; This function is called by:
+   216 ;;		_main
+   217 ;; This function uses a non-reentrant model
+   218 ;;
+   219                           
+   220                           	psect	text1
+   221  007F90                     __ptext1:
+   222                           	opt callstack 0
+   223  007F90                     _initPuerto:
+   224                           	opt callstack 30
+   225  007F90                     
+   226                           ;main.c: 16:     ADCON1bits.PCFG = 0xFF;
+   227  007F90  0E0F               	movlw	15
+   228  007F92  12C1               	iorwf	193,f,c	;volatile
+   229                           
+   230                           ;main.c: 17:     LATA = 0;
+   231  007F94  0E00               	movlw	0
+   232  007F96  6E89               	movwf	137,c	;volatile
+   233                           
+   234                           ;main.c: 18:     LATB = 0;
+   235  007F98  0E00               	movlw	0
+   236  007F9A  6E8A               	movwf	138,c	;volatile
+   237                           
+   238                           ;main.c: 19:     LATC = 0;
+   239  007F9C  0E00               	movlw	0
+   240  007F9E  6E8B               	movwf	139,c	;volatile
+   241                           
+   242                           ;main.c: 20:     LATD = 0;
+   243  007FA0  0E00               	movlw	0
+   244  007FA2  6E8C               	movwf	140,c	;volatile
+   245                           
+   246                           ;main.c: 21:     LATE = 0;
+   247  007FA4  0E00               	movlw	0
+   248  007FA6  6E8D               	movwf	141,c	;volatile
+   249  007FA8                     
+   250                           ;main.c: 22:     TRISAbits.RA1 = 0;
+   251  007FA8  9292               	bcf	146,1,c	;volatile
+   252  007FAA                     
+   253                           ;main.c: 23:     TRISBbits.RB1 = 0;
+   254  007FAA  9293               	bcf	147,1,c	;volatile
+   255  007FAC                     
+   256                           ;main.c: 24:     TRISCbits.RC1 = 0;
+   257  007FAC  9294               	bcf	148,1,c	;volatile
+   258  007FAE                     
+   259                           ;main.c: 25:     TRISDbits.RD1 = 0;
+   260  007FAE  9295               	bcf	149,1,c	;volatile
+   261  007FB0                     
+   262                           ;main.c: 26:     TRISEbits.RE1 = 0;
+   263  007FB0  9296               	bcf	150,1,c	;volatile
+   264  007FB2  0012               	return		;funcret
+   265  007FB4                     __end_of_initPuerto:
+   266                           	opt callstack 0
+   267  0000                     
+   268                           	psect	rparam
+   269  0000                     tosu	equ	0xFFF
+   270                           tosh	equ	0xFFE
+   271                           tosl	equ	0xFFD
+   272                           stkptr	equ	0xFFC
+   273                           pclatu	equ	0xFFB
+   274                           pclath	equ	0xFFA
+   275                           pcl	equ	0xFF9
+   276                           tblptru	equ	0xFF8
+   277                           tblptrh	equ	0xFF7
+   278                           tblptrl	equ	0xFF6
+   279                           tablat	equ	0xFF5
+   280                           prodh	equ	0xFF4
+   281                           prodl	equ	0xFF3
+   282                           indf0	equ	0xFEF
+   283                           postinc0	equ	0xFEE
+   284                           postdec0	equ	0xFED
+   285                           preinc0	equ	0xFEC
+   286                           plusw0	equ	0xFEB
+   287                           fsr0h	equ	0xFEA
+   288                           fsr0l	equ	0xFE9
+   289                           wreg	equ	0xFE8
+   290                           indf1	equ	0xFE7
+   291                           postinc1	equ	0xFE6
+   292                           postdec1	equ	0xFE5
+   293                           preinc1	equ	0xFE4
+   294                           plusw1	equ	0xFE3
+   295                           fsr1h	equ	0xFE2
+   296                           fsr1l	equ	0xFE1
+   297                           bsr	equ	0xFE0
+   298                           indf2	equ	0xFDF
+   299                           postinc2	equ	0xFDE
+   300                           postdec2	equ	0xFDD
+   301                           preinc2	equ	0xFDC
+   302                           plusw2	equ	0xFDB
+   303                           fsr2h	equ	0xFDA
+   304                           fsr2l	equ	0xFD9
+   305                           status	equ	0xFD8
 
 
 Data Sizes:
@@ -361,32 +430,40 @@ SFR                  0      0       0     200        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Fri Apr 10 22:26:37 2020
+Symbol Table                                                                                   Fri Apr 10 23:43:58 2020
 
-                     l11 7FC2                       u17 7FD4                       u27 7FEC  
+                     l37 7FB2                       u17 7FCC                       u27 7FEC  
             __CFG_BORV$3 000000             __CFG_CP0$OFF 000000             __CFG_CP1$OFF 000000  
-           __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000                      l701 7FC8  
-                    l703 7FCA                      l705 7FE0                      l707 7FE2  
-                    l695 7FBC                      l697 7FC0                      l699 7FC4  
+           __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000                      l721 7F90  
+                    l731 7FB0                      l723 7FA8                      l725 7FAA  
+                    l741 7FBE                      l733 7FB4                      l727 7FAC  
+                    l751 7FDC                      l743 7FC0                      l735 7FB8  
+                    l729 7FAE                      l753 7FDE                      l745 7FC2  
+                    l737 7FBA                      l755 7FE0                      l747 7FD8  
+                    l739 7FBC                      l757 7FE2                      l749 7FDA  
            __CFG_CPB$OFF 000000             __CFG_CPD$OFF 000000             __CFG_BOR$OFF 000000  
                     wreg 000FE8             __CFG_LVP$OFF 000000             __CFG_WDT$OFF 000000  
-                   _LATD 000F8C             __CFG_PWRT$ON 000000                     _main 7FC4  
-                   start 0000            __CFG_IESO$OFF 000000            __CFG_MCLRE$ON 000000  
-           ___param_bank 000000            __CFG_PLLDIV$5 000000           __CFG_CCP2MX$ON 000000  
-                  ?_main 0001            __CFG_USBDIV$1 000000            __CFG_WRT0$OFF 000000  
-          __CFG_WRT1$OFF 000000            __CFG_WRT2$OFF 000000            __CFG_WRT3$OFF 000000  
-         __CFG_EBTR0$OFF 000000           __CFG_FCMEN$OFF 000000           __CFG_EBTR1$OFF 000000  
-         __CFG_EBTR2$OFF 000000           __CFG_EBTR3$OFF 000000            __CFG_WRTB$OFF 000000  
-          __CFG_WRTC$OFF 000000            __CFG_WRTD$OFF 000000           __CFG_EBTRB$OFF 000000  
-         __CFG_ICPRT$OFF 000000           __CFG_PBADEN$ON 000000          __initialization 7FB6  
-           __end_of_main 8000                   ??_main 0001            __activetblptr 000000  
-         __CFG_XINST$OFF 000000           __CFG_STVREN$ON 000000               __accesstop 0060  
-__end_of__initialization 7FB6            ___rparam_used 000001           __pcstackCOMRAM 0001  
-        __CFG_VREGEN$OFF 000000                  __Hparam 0000                  __Lparam 0000  
-             _initPuerto 7FBC                  __pcinit 7FB6                  __ramtop 0800  
-                __ptext0 7FC4                  __ptext1 7FBC     end_of_initialization 7FB6  
-              _PORTDbits 000F83                _TRISDbits 000F95              ?_initPuerto 0001  
-    start_initialization 7FB6         __CFG_LPT1OSC$OFF 000000      __size_of_initPuerto 0008  
-       __CFG_WDTPS$32768 000000                 __Hrparam 0000                 __Lrparam 0000  
-           ??_initPuerto 0001       __end_of_initPuerto 7FC4            __size_of_main 003C  
-  __CFG_CPUDIV$OSC1_PLL2 000000       __CFG_FOSC$HSPLL_HS 000000  
+                   _LATA 000F89                     _LATB 000F8A                     _LATC 000F8B  
+                   _LATD 000F8C                     _LATE 000F8D             __CFG_PWRT$ON 000000  
+                   _main 7FB4                     start 0000            __CFG_IESO$OFF 000000  
+          __CFG_MCLRE$ON 000000             ___param_bank 000000            __CFG_PLLDIV$5 000000  
+         __CFG_CCP2MX$ON 000000                    ?_main 0001            __CFG_USBDIV$1 000000  
+          __CFG_WRT0$OFF 000000            __CFG_WRT1$OFF 000000            __CFG_WRT2$OFF 000000  
+          __CFG_WRT3$OFF 000000           __CFG_EBTR0$OFF 000000           __CFG_FCMEN$OFF 000000  
+         __CFG_EBTR1$OFF 000000           __CFG_EBTR2$OFF 000000           __CFG_EBTR3$OFF 000000  
+          __CFG_WRTB$OFF 000000            __CFG_WRTC$OFF 000000            __CFG_WRTD$OFF 000000  
+         __CFG_EBTRB$OFF 000000           __CFG_ICPRT$OFF 000000           __CFG_PBADEN$ON 000000  
+        __initialization 7F8A             __end_of_main 8000                   ??_main 0001  
+          __activetblptr 000000           __CFG_XINST$OFF 000000           __CFG_STVREN$ON 000000  
+             __accesstop 0060  __end_of__initialization 7F8A            ___rparam_used 000001  
+         __pcstackCOMRAM 0001          __CFG_VREGEN$OFF 000000                  __Hparam 0000  
+                __Lparam 0000               _initPuerto 7F90                  __pcinit 7F8A  
+                __ramtop 0800                  __ptext0 7FB4                  __ptext1 7F90  
+   end_of_initialization 7F8A                _PORTAbits 000F80                _PORTBbits 000F81  
+              _PORTCbits 000F82                _PORTDbits 000F83                _PORTEbits 000F84  
+              _TRISAbits 000F92                _TRISBbits 000F93                _TRISCbits 000F94  
+              _TRISDbits 000F95                _TRISEbits 000F96              ?_initPuerto 0001  
+    start_initialization 7F8A         __CFG_LPT1OSC$OFF 000000      __size_of_initPuerto 0024  
+       __CFG_WDTPS$32768 000000               _ADCON1bits 000FC1                 __Hrparam 0000  
+               __Lrparam 0000             ??_initPuerto 0001       __end_of_initPuerto 7FB4  
+          __size_of_main 004C    __CFG_CPUDIV$OSC1_PLL2 000000       __CFG_FOSC$HSPLL_HS 000000  

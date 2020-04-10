@@ -5631,19 +5631,39 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 9 "main.c" 2
 
 
+
+
+
 void initPuerto()
 {
+    ADCON1bits.PCFG = 0xFF;
+    LATA = 0;
+    LATB = 0;
+    LATC = 0;
     LATD = 0;
+    LATE = 0;
+    TRISAbits.RA1 = 0;
+    TRISBbits.RB1 = 0;
+    TRISCbits.RC1 = 0;
     TRISDbits.RD1 = 0;
+    TRISEbits.RE1 = 0;
 }
 
 void main(void) {
 
     initPuerto();
     while(1){
+        PORTAbits.RA1 = 1;
+        PORTBbits.RB1 = 1;
+        PORTCbits.RC1 = 1;
         PORTDbits.RD1 = 1;
-        _delay((unsigned long)((100)*(20000000/4000.0)));
+        PORTEbits.RE1 = 1;
+        _delay((unsigned long)((200)*(20000000/4000.0)));
+        PORTAbits.RA1 = 0;
+        PORTBbits.RB1 = 0;
+        PORTCbits.RC1 = 0;
         PORTDbits.RD1 = 0;
-        _delay((unsigned long)((100)*(20000000/4000.0)));
+        PORTEbits.RE1 = 0;
+        _delay((unsigned long)((200)*(20000000/4000.0)));
     }
 }

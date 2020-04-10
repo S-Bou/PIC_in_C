@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/debug\PruebaLeds.X.debug.sym \
   --cmf=dist/default/debug\PruebaLeds.X.debug.cmf -z -Q18F4550 \
-  -oC:\Users\bouyo\AppData\Local\Temp\s3os.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\bouyo\AppData\Local\Temp\s3tc.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/debug/PruebaLeds.X.debug.map -E1 -ver=XC8 --acfsm=1493 \
   -ASTACK=060h-07FFh -pstack=STACK -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0800h-08FFhx120 -AMEDIUMCONST=0800h-07FFFh -ACOMRAM=01h-05Fh \
@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\bouyo\AppData\Local\Temp\s3os.o \
+  C:\Users\bouyo\AppData\Local\Temp\s3tc.o \
   dist/default/debug\PruebaLeds.X.debug.o 
 
 Object code version is 3.11
@@ -35,24 +35,24 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\bouyo\AppData\Local\Temp\s3os.o
+C:\Users\bouyo\AppData\Local\Temp\s3tc.o
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/debug\PruebaLeds.X.debug.o
-                text1                              7FBC     7FBC        8     3FDE       0
-                text0                              7FC4     7FC4       3C     3FE2       0
+                text1                              7F90     7F90       24     3FC8       0
+                text0                              7FB4     7FB4       4C     3FDA       0
                 cstackCOMRAM                          1        1        2        1       1
-                cinit                              7FB6     7FB6        6     3FDB       0
+                cinit                              7F8A     7F8A        6     3FC5       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 init                                  0        0        4         0
-                text1                              7FBC     7FBC        8         0
-                text0                              7FC4     7FC4       3C         0
-                cinit                              7FB6     7FB6        6         0
+                text1                              7F90     7F90       24         0
+                text0                              7FB4     7FB4       4C         0
+                cinit                              7F8A     7F8A        6         0
 
         CLASS   CONST          
 
@@ -103,9 +103,9 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 cstackCOMRAM                   000001  000002  000003         1       1  COMRAM  
-                cinit                          007FB6  000006  007FBC      3FDB       0  CODE    
-                text1                          007FBC  000008  007FC4      3FDE       0  CODE    
-                text0                          007FC4  00003C  008000      3FE2       0  CODE    
+                cinit                          007F8A  000006  007F90      3FC5       0  CODE    
+                text1                          007F90  000024  007FB4      3FC8       0  CODE    
+                text0                          007FB4  00004C  008000      3FDA       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -122,21 +122,34 @@ UNUSED ADDRESS RANGES
         BANK6            000600-0006FF              100
         BANK7            000700-0007FF              100
         BIGRAM           000003-0007FF              7FD
-        CODE             000004-007FB5             7FB2
+        CODE             000004-007F89             7F86
         COMRAM           000003-00005F               5D
-        CONST            000004-007FB5             7FB2
+        CONST            000004-007F89             7F86
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      000800-007FB5             77B6
+        MEDIUMCONST      000800-007F89             778A
         RAM              000060-0007FF              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       000800-007FB5              100
+        SMALLCONST       000800-007F89              100
         STACK            000060-0007FF              7A0
 
                                   Symbol Table
 
+_ADCON1bits              (abs)        000FC1
+_LATA                    (abs)        000F89
+_LATB                    (abs)        000F8A
+_LATC                    (abs)        000F8B
 _LATD                    (abs)        000F8C
+_LATE                    (abs)        000F8D
+_PORTAbits               (abs)        000F80
+_PORTBbits               (abs)        000F81
+_PORTCbits               (abs)        000F82
 _PORTDbits               (abs)        000F83
+_PORTEbits               (abs)        000F84
+_TRISAbits               (abs)        000F92
+_TRISBbits               (abs)        000F93
+_TRISCbits               (abs)        000F94
 _TRISDbits               (abs)        000F95
+_TRISEbits               (abs)        000F96
 __CFG_BOR$OFF            (abs)        000000
 __CFG_BORV$3             (abs)        000000
 __CFG_CCP2MX$ON          (abs)        000000
@@ -305,22 +318,22 @@ ___rparam_used           (abs)        000001
 ___sp                    stack        000000
 __accesstop              (abs)        000060
 __activetblptr           (abs)        000000
-__end_of__initialization cinit        007FB6
-__end_of_initPuerto      text1        007FC4
+__end_of__initialization cinit        007F8A
+__end_of_initPuerto      text1        007FB4
 __end_of_main            text0        008000
-__initialization         cinit        007FB6
+__initialization         cinit        007F8A
 __mediumconst            mediumconst  000000
-__pcinit                 cinit        007FB6
+__pcinit                 cinit        007F8A
 __pcstackCOMRAM          cstackCOMRAM 000001
-__ptext0                 text0        007FC4
-__ptext1                 text1        007FBC
+__ptext0                 text0        007FB4
+__ptext1                 text1        007F90
 __ramtop                 ramtop       000800
 __size_of_initPuerto     (abs)        000000
 __size_of_main           (abs)        000000
 __smallconst             smallconst   000000
-_initPuerto              text1        007FBC
-_main                    text0        007FC4
-end_of_initialization    cinit        007FB6
+_initPuerto              text1        007F90
+_main                    text0        007FB4
+end_of_initialization    cinit        007F8A
 intlevel0                text         000000
 intlevel1                text         000000
 intlevel2                text         000000
@@ -328,14 +341,14 @@ intlevel3                text         000000
 stackhi                  (abs)        0007FF
 stacklo                  (abs)        000060
 start                    init         000000
-start_initialization     cinit        007FB6
+start_initialization     cinit        007F8A
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 17 in file "main.c"
+		line 29 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -364,7 +377,7 @@ Total ram usage:        2 bytes
 
  *************** function _initPuerto *****************
  Defined at:
-		line 11 in file "main.c"
+		line 14 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -396,13 +409,13 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 shared
-		__initialization		CODE           	7FB6	0000	1
+		__initialization		CODE           	7F8A	0000	1
 
 shared estimated size: 1
 
 main.c
-		_main          		CODE           	7FC4	0000	61
-		_initPuerto    		CODE           	7FBC	0000	9
+		_main          		CODE           	7FB4	0000	77
+		_initPuerto    		CODE           	7F90	0000	37
 
-main.c estimated size: 70
+main.c estimated size: 114
 
