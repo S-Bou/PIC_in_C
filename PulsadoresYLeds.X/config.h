@@ -12,9 +12,8 @@
 extern "C" {
 #endif
 
-#define _XTAL_FREQ 20000000L
+#define _XTAL_FREQ 2000000L
 
-void InitPort(void);
 
 #ifdef	__cplusplus
 }

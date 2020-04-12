@@ -78,16 +78,4 @@
 // Use project enums instead of #define for ON and OFF.
 
 
-void InitPort(void)
-{
-    ADCON1bits.PCFG = 0xFF; //All pins are config as digital 
-                            //Remember: LATX for write, PORTX for read
-    LATD = 0x00;            //Init PORTD in 0
-    LATB = 0x00;            //Init PORTB in 0
-                            //Remember: TRISX for establish input (1) or output (0)
-    TRISBbits.RB0 = 1;      //Input for switch
-    TRISBbits,RB1 = 1;      //Input for switch
-    INTCON2bits.RBPU = 0;   //Activate resistor Pull-UP of port B
-    TRISD = 0x00;           //All port D is output
-}
 

@@ -5629,12 +5629,29 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 9 "main.c" 2
 
 # 1 "./config.h" 1
-# 17 "./config.h"
-void InitPort(void);
 # 10 "main.c" 2
 
 
 char juego = 1;
+long velocidad = 1;
+
+void Luces_Uno(void);
+void Luces_Dos(void);
+void Luces_Tres(void);
+void Luces_Cuatro(void);
+
+void InitPort(void)
+{
+    ADCON1bits.PCFG = 0xFF;
+
+    LATD = 0x00;
+    LATB = 0x00;
+
+    TRISBbits.RB0 = 1;
+    TRISBbits,RB1 = 1;
+    INTCON2bits.RBPU = 0;
+    TRISD = 0x00;
+}
 
 void main(void) {
     InitPort();
@@ -5642,8 +5659,85 @@ void main(void) {
     {
         if(PORTBbits.RB0 != 1)
         {
+            _delay((unsigned long)((20)*(2000000L/4000.0)));
             juego = juego + 1;
-            if(juego == 5){juego=0;}
+            if(juego == 5){juego = 1;}
         }
+
+        switch(juego)
+        {
+            case 1:
+                Luces_Uno();
+                break;
+            case 2:
+                Luces_Dos();
+                break;
+            case 3:
+                Luces_Tres();
+                break;
+            case 4:
+                Luces_Cuatro();
+                break;
+        }
+    }
+}
+
+void Luces_Uno(void)
+{
+    LATD = 0xAA;
+    if(velocidad == 1){_delay((unsigned long)((1000)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((1000)*(2000000L/4000.0)));}
+    else if(velocidad == 2){_delay((unsigned long)((500)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((500)*(2000000L/4000.0)));}
+    else if(velocidad == 3){_delay((unsigned long)((250)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((250)*(2000000L/4000.0)));}
+    else if(velocidad == 4){_delay((unsigned long)((100)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((100)*(2000000L/4000.0)));}
+    if(PORTBbits.RB1 == 0)
+    {
+        _delay((unsigned long)((20)*(2000000L/4000.0)));
+        velocidad = velocidad + 1;
+        if(velocidad == 5){velocidad = 1;}
+    }
+}
+
+void Luces_Dos(void)
+{
+    LATD = 0xFF;
+    if(velocidad == 1){_delay((unsigned long)((1000)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((1000)*(2000000L/4000.0)));}
+    else if(velocidad == 2){_delay((unsigned long)((500)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((500)*(2000000L/4000.0)));}
+    else if(velocidad == 3){_delay((unsigned long)((250)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((250)*(2000000L/4000.0)));}
+    else if(velocidad == 4){_delay((unsigned long)((100)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((100)*(2000000L/4000.0)));}
+    if(PORTBbits.RB1 == 0)
+    {
+        _delay((unsigned long)((20)*(2000000L/4000.0)));
+        velocidad = velocidad + 1;
+        if(velocidad == 5){velocidad = 1;}
+    }
+}
+
+void Luces_Tres(void)
+{
+    LATD = 0x66;
+    if(velocidad == 1){_delay((unsigned long)((1000)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((1000)*(2000000L/4000.0)));}
+    else if(velocidad == 2){_delay((unsigned long)((500)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((500)*(2000000L/4000.0)));}
+    else if(velocidad == 3){_delay((unsigned long)((250)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((250)*(2000000L/4000.0)));}
+    else if(velocidad == 4){_delay((unsigned long)((100)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((100)*(2000000L/4000.0)));}
+    if(PORTBbits.RB1 == 0)
+    {
+        _delay((unsigned long)((20)*(2000000L/4000.0)));
+        velocidad = velocidad + 1;
+        if(velocidad == 5){velocidad = 1;}
+    }
+}
+
+void Luces_Cuatro(void)
+{
+    LATD = 0x99;
+    if(velocidad == 1){_delay((unsigned long)((1000)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((1000)*(2000000L/4000.0)));}
+    else if(velocidad == 2){_delay((unsigned long)((500)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((500)*(2000000L/4000.0)));}
+    else if(velocidad == 3){_delay((unsigned long)((250)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((250)*(2000000L/4000.0)));}
+    else if(velocidad == 4){_delay((unsigned long)((100)*(2000000L/4000.0)));LATD = 0x00;_delay((unsigned long)((100)*(2000000L/4000.0)));}
+    if(PORTBbits.RB1 == 0)
+    {
+        _delay((unsigned long)((20)*(2000000L/4000.0)));
+        velocidad = velocidad + 1;
+        if(velocidad == 5){velocidad = 1;}
     }
 }

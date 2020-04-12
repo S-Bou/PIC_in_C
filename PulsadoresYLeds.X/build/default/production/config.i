@@ -5699,15 +5699,4 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
-void InitPort(void)
-{
-    ADCON1bits.PCFG = 0xFF;
 
-    LATD = 0x00;
-    LATB = 0x00;
-
-    TRISBbits.RB0 = 1;
-    TRISBbits,RB1 = 1;
-    INTCON2bits.RBPU = 0;
-    TRISD = 0x00;
-}

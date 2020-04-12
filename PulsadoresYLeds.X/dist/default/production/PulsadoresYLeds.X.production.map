@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\PulsadoresYLeds.X.production.sym \
   --cmf=dist/default/production\PulsadoresYLeds.X.production.cmf -z \
-  -Q18F4550 -oC:\Users\bouyo\AppData\Local\Temp\sftk.2 \
+  -Q18F4550 -oC:\Users\bouyo\AppData\Local\Temp\s16s.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/PulsadoresYLeds.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=060h-07FFh -pstack=STACK -ACODE=00h-07FFFh \
@@ -24,7 +24,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\bouyo\AppData\Local\Temp\sftk.o \
+  C:\Users\bouyo\AppData\Local\Temp\s16s.o \
   dist/default/production\PulsadoresYLeds.X.production.o 
 
 Object code version is 3.11
@@ -37,26 +37,35 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\bouyo\AppData\Local\Temp\sftk.o
+C:\Users\bouyo\AppData\Local\Temp\s16s.o
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\PulsadoresYLeds.X.production.o
-                text1                              7FB2     7FB2       1A     3FD9       0
-                text0                              7FCC     7FCC       34     3FE6       0
-                dataCOMRAM                            1        1        1        1       1
-                cinit                              7F9A     7F9A       18     3FCD       0
-                idataCOMRAM                        7F99     7F99        1     7F99       0
+                text5                              7942     7942       1A     3CA1       0
+                text4                              7B98     7B98      178     3DCC       0
+                text3                              7A22     7A22      176     3D11       0
+                text2                              7D10     7D10      178     3E88       0
+                text1                              7E88     7E88      178     3F44       0
+                text0                              7986     7986       9C     3CC3       0
+                cstackCOMRAM                          6        6        4        1       1
+                dataCOMRAM                            1        1        5        1       1
+                cinit                              795C     795C       2A     3CAE       0
+                idataCOMRAM                        793D     793D        5     793D       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 init                                  0        0        4         0
-                text1                              7FB2     7FB2       1A         0
-                text0                              7FCC     7FCC       34         0
-                cinit                              7F9A     7F9A       18         0
-                idataCOMRAM                        7F99     7F99        1         0
+                text5                              7942     7942       1A         0
+                text4                              7B98     7B98      178         0
+                text3                              7A22     7A22      176         0
+                text2                              7D10     7D10      178         0
+                text1                              7E88     7E88      178         0
+                text0                              7986     7986       9C         0
+                cinit                              795C     795C       2A         0
+                idataCOMRAM                        793D     793D        5         0
 
         CLASS   CONST          
 
@@ -65,7 +74,8 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                dataCOMRAM                            1        1        1         1
+                cstackCOMRAM                          6        6        4         1
+                dataCOMRAM                            1        1        5         1
 
         CLASS   ABS1           
 
@@ -106,11 +116,15 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                dataCOMRAM                     000001  000001  000002         1       1  COMRAM  
-                idataCOMRAM                    007F99  000001  007F9A      7F99       0  CODE    
-                cinit                          007F9A  000018  007FB2      3FCD       0  CODE    
-                text1                          007FB2  00001A  007FCC      3FD9       0  CODE    
-                text0                          007FCC  000034  008000      3FE6       0  CODE    
+                dataCOMRAM                     000001  000009  00000A         1       1  COMRAM  
+                idataCOMRAM                    00793D  000005  007942      793D       0  CODE    
+                text5                          007942  00001A  00795C      3CA1       0  CODE    
+                cinit                          00795C  00002A  007986      3CAE       0  CODE    
+                text0                          007986  00009C  007A22      3CC3       0  CODE    
+                text3                          007A22  000176  007B98      3D11       0  CODE    
+                text4                          007B98  000178  007D10      3DCC       0  CODE    
+                text2                          007D10  000178  007E88      3E88       0  CODE    
+                text1                          007E88  000178  008000      3F44       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -126,24 +140,28 @@ UNUSED ADDRESS RANGES
         BANK5            000500-0005FF              100
         BANK6            000600-0006FF              100
         BANK7            000700-0007FF              100
-        BIGRAM           000002-0007FF              7FE
-        CODE             000004-007F98             7F95
-        COMRAM           000002-00005F               5E
-        CONST            000004-007F98             7F95
+        BIGRAM           00000A-0007FF              7F6
+        CODE             000004-00793C             7939
+        COMRAM           00000A-00005F               56
+        CONST            000004-00793C             7939
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      000800-007F98             7799
+        MEDIUMCONST      000800-00793C             713D
         RAM              000060-0007FF              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       000800-007F98              100
+        SMALLCONST       000800-00793C              100
         STACK            000060-0007FF              7A0
 
                                   Symbol Table
 
 _ADCON1bits              (abs)        000FC1
 _INTCON2bits             (abs)        000FF1
-_InitPort                text1        007FB2
+_InitPort                text5        007942
 _LATB                    (abs)        000F8A
 _LATD                    (abs)        000F8C
+_Luces_Cuatro            text4        007B98
+_Luces_Dos               text3        007A22
+_Luces_Tres              text2        007D10
+_Luces_Uno               text1        007E88
 _PORTBbits               (abs)        000F81
 _RB1                     (abs)        007C09
 _TRISBbits               (abs)        000F93
@@ -240,7 +258,7 @@ __Hrparam                rparam       000000
 __Hsfr                   sfr          000000
 __Hsmallconst            smallconst   000000
 __Hspace_0               (abs)        30000E
-__Hspace_1               (abs)        000002
+__Hspace_1               (abs)        00000A
 __Hspace_2               (abs)        000000
 __Hstack                 stack        000000
 __Hstruct                struct       000000
@@ -248,6 +266,10 @@ __Htemp                  temp         000000
 __Htext                  text         000000
 __Htext0                 text0        000000
 __Htext1                 text1        000000
+__Htext2                 text2        000000
+__Htext3                 text3        000000
+__Htext4                 text4        000000
+__Htext5                 text5        000000
 __LRAM                   (abs)        000001
 __Labs1                  abs1         000000
 __Lbank0                 bank0        000000
@@ -310,8 +332,12 @@ __Ltemp                  temp         000000
 __Ltext                  text         000000
 __Ltext0                 text0        000000
 __Ltext1                 text1        000000
+__Ltext2                 text2        000000
+__Ltext3                 text3        000000
+__Ltext4                 text4        000000
+__Ltext5                 text5        000000
 __S0                     (abs)        30000E
-__S1                     (abs)        000002
+__S1                     (abs)        00000A
 __S2                     (abs)        000000
 ___inthi_sp              stack        000000
 ___intlo_sp              stack        000000
@@ -319,25 +345,38 @@ ___param_bank            (abs)        000000
 ___rparam_used           (abs)        000001
 ___sp                    stack        000000
 __accesstop              (abs)        000060
-__activetblptr           (abs)        000000
-__end_of_InitPort        text1        007FCC
-__end_of__initialization cinit        007FAC
-__end_of_main            text0        008000
-__initialization         cinit        007F9A
+__activetblptr           (abs)        000002
+__end_of_InitPort        text5        00795C
+__end_of_Luces_Cuatro    text4        007D10
+__end_of_Luces_Dos       text3        007B98
+__end_of_Luces_Tres      text2        007E88
+__end_of_Luces_Uno       text1        008000
+__end_of__initialization cinit        00797C
+__end_of_main            text0        007A22
+__initialization         cinit        00795C
 __mediumconst            mediumconst  000000
-__pcinit                 cinit        007F9A
-__pcstackCOMRAM          cstackCOMRAM 000000
+__pcinit                 cinit        00795C
+__pcstackCOMRAM          cstackCOMRAM 000006
 __pdataCOMRAM            dataCOMRAM   000001
-__pidataCOMRAM           idataCOMRAM  007F99
-__ptext0                 text0        007FCC
-__ptext1                 text1        007FB2
+__pidataCOMRAM           idataCOMRAM  00793D
+__ptext0                 text0        007986
+__ptext1                 text1        007E88
+__ptext2                 text2        007D10
+__ptext3                 text3        007A22
+__ptext4                 text4        007B98
+__ptext5                 text5        007942
 __ramtop                 ramtop       000800
 __size_of_InitPort       (abs)        000000
+__size_of_Luces_Cuatro   (abs)        000000
+__size_of_Luces_Dos      (abs)        000000
+__size_of_Luces_Tres     (abs)        000000
+__size_of_Luces_Uno      (abs)        000000
 __size_of_main           (abs)        000000
 __smallconst             smallconst   000000
-_juego                   dataCOMRAM   000001
-_main                    text0        007FCC
-end_of_initialization    cinit        007FAC
+_juego                   dataCOMRAM   000005
+_main                    text0        007986
+_velocidad               dataCOMRAM   000001
+end_of_initialization    cinit        00797C
 intlevel0                text         000000
 intlevel1                text         000000
 intlevel2                text         000000
@@ -345,14 +384,14 @@ intlevel3                text         000000
 stackhi                  (abs)        0007FF
 stacklo                  (abs)        000060
 start                    init         000000
-start_initialization     cinit        007F9A
+start_initialization     cinit        00795C
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 14 in file "main.c"
+		line 33 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -368,20 +407,140 @@ FUNCTION INFORMATION:
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
       Params:         0       0       0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
+      Temps:          2       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
  Hardware stack levels required when called:    1
  This function calls:
 		_InitPort
+		_Luces_Cuatro
+		_Luces_Dos
+		_Luces_Tres
+		_Luces_Uno
  This function is called by:
 		Startup code after reset
  This function uses a non-reentrant model
 
 
+ *************** function _Luces_Uno *****************
+ Defined at:
+		line 62 in file "main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+      Params:         0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _Luces_Tres *****************
+ Defined at:
+		line 92 in file "main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+      Params:         0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _Luces_Dos *****************
+ Defined at:
+		line 77 in file "main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+      Params:         0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _Luces_Cuatro *****************
+ Defined at:
+		line 107 in file "main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+      Params:         0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
  *************** function _InitPort *****************
  Defined at:
-		line 81 in file "config.c"
+		line 20 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -412,18 +571,18 @@ Total ram usage:        0 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-config.c
-		_InitPort      		CODE           	7FB2	0000	27
-
-config.c estimated size: 27
-
 shared
-		__initialization		CODE           	7F9A	0000	19
+		__initialization		CODE           	795C	0000	33
 
-shared estimated size: 19
+shared estimated size: 33
 
 main.c
-		_main          		CODE           	7FCC	0000	53
+		_InitPort      		CODE           	7942	0000	27
+		_Luces_Uno     		CODE           	7E88	0000	377
+		_main          		CODE           	7986	0000	157
+		_Luces_Dos     		CODE           	7A22	0000	375
+		_Luces_Tres    		CODE           	7D10	0000	377
+		_Luces_Cuatro  		CODE           	7B98	0000	377
 
-main.c estimated size: 53
+main.c estimated size: 1690
 
