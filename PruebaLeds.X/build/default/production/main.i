@@ -5658,12 +5658,12 @@ void main(void) {
         PORTCbits.RC1 = 1;
         PORTDbits.RD1 = 1;
         PORTEbits.RE1 = 1;
-        _delay((unsigned long)((500)*(20000000/4000.0)));
+        _delay((unsigned long)((1000)*(20000000/4000.0)));
         PORTAbits.RA1 = 0;
         PORTBbits.RB1 = 0;
         PORTCbits.RC1 = 0;
         PORTDbits.RD1 = 0;
         PORTEbits.RE1 = 0;
-        _delay((unsigned long)((500)*(20000000/4000.0)));
+        _delay((unsigned long)((1000)*(20000000/4000.0)));
     }
 }

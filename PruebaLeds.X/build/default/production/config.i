@@ -5639,7 +5639,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 #pragma config USBDIV = 1
 
 
-#pragma config FOSC = HSPLL_HS
+#pragma config FOSC = HS
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
 

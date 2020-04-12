@@ -9,11 +9,11 @@
 #include "config.h"
 #include "pic18f4550.h"
 
-#define time 200
+#define time 1000
 
 void initPuerto()
 {
-    ADCON1bits.PCFG = 0xFF;
+    ADCON1bits.PCFG = 0xFF; //Config all exit as digital
     LATA = 0;
     LATB = 0;
     LATC = 0;

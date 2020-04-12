@@ -157,6 +157,7 @@ __Hnvbit 0 0 COMRAM 1
 __Lnvbit 0 0 COMRAM 1
 __Hcinit 0 0 ABS 0
 __Lcinit 0 0 ABS 0
+__CFG_FOSC$HS 0 0 ABS 0
 __pcinit 7F86 0 CODE 0
 __CFG_EBTRB$OFF 0 0 ABS 0
 __ramtop 800 0 RAM 0
@@ -176,7 +177,6 @@ __CFG_BORV$3 0 0 ABS 0
 ___intlo_sp 0 0 STACK 2
 __CFG_CP0$OFF 0 0 ABS 0
 __smallconst 0 0 SMALLCONST 0
-__CFG_FOSC$HSPLL_HS 0 0 ABS 0
 __CFG_CP1$OFF 0 0 ABS 0
 __Hreset_vec 0 0 CODE 0
 __Lreset_vec 0 0 CODE 0
@@ -217,7 +217,7 @@ cinit 7F86 7F8B CODE 7F86 0
 %locals
 dist/default/production\PruebaLeds.X.production.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
-C:\Users\bouyo\AppData\Local\Temp\sbqs.s
+C:\Users\bouyo\AppData\Local\Temp\sfao.s
 903 7F86 0 CODE 0
 905 7F86 0 CODE 0
 908 7F86 0 CODE 0

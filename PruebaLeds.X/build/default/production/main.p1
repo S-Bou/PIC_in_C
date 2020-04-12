@@ -817,8 +817,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 37:         PORTEbits.RE1 = 1;
 [e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
 "38
-[; ;main.c: 38:         _delay((unsigned long)((500)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 38:         _delay((unsigned long)((1000)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "39
 [; ;main.c: 39:         PORTAbits.RA1 = 0;
 [e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
@@ -835,8 +835,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 43:         PORTEbits.RE1 = 0;
 [e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
 "44
-[; ;main.c: 44:         _delay((unsigned long)((500)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 44:         _delay((unsigned long)((1000)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "45
 [; ;main.c: 45:     }
 }

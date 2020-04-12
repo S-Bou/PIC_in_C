@@ -516,7 +516,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18
 [p x USBDIV = 1 ]
 "21
-[p x FOSC = HSPLL_HS ]
+[p x FOSC = HS ]
 "22
 [p x FCMEN = OFF ]
 "23
