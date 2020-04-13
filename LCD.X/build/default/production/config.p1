@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "7 config.c
-[p x PLLDIV = 1 ]
+[p x PLLDIV = 5 ]
 "8
 [p x CPUDIV = OSC1_PLL2 ]
 "9

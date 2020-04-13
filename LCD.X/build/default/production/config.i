@@ -13,7 +13,7 @@
 
 
 
-#pragma config PLLDIV = 1
+#pragma config PLLDIV = 5
 #pragma config CPUDIV = OSC1_PLL2
 #pragma config USBDIV = 1
 

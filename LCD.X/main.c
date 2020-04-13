@@ -22,8 +22,8 @@ void main(void) {
     LCD_Init();
     LCD_gotoXY(0, 0);
     putrsXLCD("** PRUEBA UNO **");
-    __delay_ms(100);
+    __delay_ms(500);
     LCD_gotoXY(1, 0);
     putrsXLCD("** PRUEBA DOS **");
-    __delay_ms(100);
+    __delay_ms(500);
 }

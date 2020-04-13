@@ -5787,8 +5787,8 @@ void main(void) {
     LCD_Init();
     LCD_gotoXY(0, 0);
     putrsXLCD("** PRUEBA UNO **");
-    _delay((unsigned long)((100)*(20000000L/4000.0)));
+    _delay((unsigned long)((500)*(20000000L/4000.0)));
     LCD_gotoXY(1, 0);
     putrsXLCD("** PRUEBA DOS **");
-    _delay((unsigned long)((100)*(20000000L/4000.0)));
+    _delay((unsigned long)((500)*(20000000L/4000.0)));
 }
