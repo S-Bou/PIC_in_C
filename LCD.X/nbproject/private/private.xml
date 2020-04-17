@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Projects/PIC/PIC_in_C/LCD.X/config.c</file>
-            <file>file:/D:/Projects/PIC/PIC_in_C/LCD.X/display_LCD.c</file>
             <file>file:/D:/Projects/PIC/PIC_in_C/LCD.X/main.c</file>
+            <file>file:/D:/Projects/PIC/PIC_in_C/LCD.X/config.c</file>
             <file>file:/D:/Projects/PIC/PIC_in_C/LCD.X/config.h</file>
+            <file>file:/D:/Projects/PIC/PIC_in_C/LCD.X/display_LCD.c</file>
             <file>file:/D:/Projects/PIC/PIC_in_C/LCD.X/display_LCD.h</file>
         </group>
     </open-files>
