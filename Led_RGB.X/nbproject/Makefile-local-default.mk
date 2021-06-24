@@ -35,3 +35,4 @@ MP_AS_DIR="D:\Programas\Microchip\xc8\v2.19\bin"
 MP_LD_DIR="D:\Programas\Microchip\xc8\v2.19\bin"
 MP_AR_DIR="D:\Programas\Microchip\xc8\v2.19\bin"
 # MP_BC_DIR is not defined
+DFP_DIR=D:/Programas/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33
