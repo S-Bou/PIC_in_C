@@ -7,6 +7,8 @@
 
 
 #include <xc.h>
+#include <configuration.h>
+#include <pic16f877a.h>
 
 void main(void) {
     return;
