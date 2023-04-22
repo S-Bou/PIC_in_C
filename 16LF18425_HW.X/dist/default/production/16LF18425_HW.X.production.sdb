@@ -1,0 +1,28 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16LF18425 ]
+[d frameptr 6 ]
+"10 D:\Programas\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 D:\Programas\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 D:\Programas\Microchip\xc8\v2.32\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"50 D:\Projects\PIC\PIC_in_C\16LF18425_HW.X\main_hw.c
+[v _main main `(v  1 e 1 0 ]
+"446 D:/Programas/Microchip/MPLABX/v6.05/packs/Microchip/PIC16F1xxxx_DFP/1.15.191/xc8\pic\include\proc\pic16lf18425.h
+[v _PORTA PORTA `VEuc  1 e 1 @12 ]
+"546
+[v _TRISA TRISA `VEuc  1 e 1 @18 ]
+"646
+[v _LATA LATA `VEuc  1 e 1 @24 ]
+"29331
+[v _ANSELA ANSELA `VEuc  1 e 1 @7992 ]
+"50 D:\Projects\PIC\PIC_in_C\16LF18425_HW.X\main_hw.c
+[v _main main `(v  1 e 1 0 ]
+{
+"66
+} 0
