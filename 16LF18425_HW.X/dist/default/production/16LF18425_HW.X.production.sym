@@ -5,7 +5,7 @@ __S3 0 0 ABS 0
 __Hintentry 2 0 CODE 0
 __Lintentry 2 0 CODE 0
 _LATA 18 0 ABS 0
-_main 7D4 0 CODE 0
+_main 7D6 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
 start 2 0 CODE 0
@@ -167,6 +167,7 @@ __Hsfr49 0 0 ABS 0
 __Lsfr49 0 0 ABS 0
 __Hsfr59 0 0 ABS 0
 __Lsfr59 0 0 ABS 0
+_PORTAbits C 0 ABS 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
 __Hbank0 0 0 ABS 0
@@ -336,28 +337,28 @@ __pcstackCOMMON 70 0 COMMON 1
 start_initialization 7FD 0 CODE 0
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
-__pmaintext 7D4 0 CODE 0
+__pmaintext 7D6 0 CODE 0
 __initialization 7FD 0 CODE 0
 %segments
 reset_vec 0 7 CODE 0 0
 cinit FFA FFF CODE FFA 0
 cstackCOMMON 70 71 COMMON 70 1
-maintext FA8 FF9 CODE FA8 0
+maintext FAC FF9 CODE FAC 0
 %locals
 dist/default/production\16LF18425_HW.X.production.o
-C:\Users\bouyo\AppData\Local\Temp\xcAs8s8.s
-1869 7FD 0 CODE 0
-1872 7FD 0 CODE 0
-1878 7FD 0 CODE 0
+C:\Users\bouyo\AppData\Local\Temp\xcAsh9k.s
+1871 7FD 0 CODE 0
+1874 7FD 0 CODE 0
 1880 7FD 0 CODE 0
-1881 7FE 0 CODE 0
+1882 7FD 0 CODE 0
+1883 7FE 0 CODE 0
 main_hw.c
-50 7D4 0 CODE 0
-53 7D4 0 CODE 0
+50 7D6 0 CODE 0
 54 7D6 0 CODE 0
-55 7D7 0 CODE 0
+55 7D8 0 CODE 0
 56 7D9 0 CODE 0
-59 7DC 0 CODE 0
-60 7DF 0 CODE 0
-61 7EB 0 CODE 0
-62 7EE 0 CODE 0
+57 7DB 0 CODE 0
+60 7DE 0 CODE 0
+61 7E0 0 CODE 0
+62 7EC 0 CODE 0
+63 7EE 0 CODE 0

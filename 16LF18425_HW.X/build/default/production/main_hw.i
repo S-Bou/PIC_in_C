@@ -17316,16 +17316,17 @@ extern __bank0 __bit __timeout;
 void main(void) {
 
 
+
     PORTA = 0x00;
     LATA = 0x00;
     ANSELA = 0x00;
     TRISA = 0x38;
 
     while(1){
-        PORTA = 0x04;
-        _delay((unsigned long)((500)*(32000000UL/4000.0)));
-        PORTA = 0x04;
-        _delay((unsigned long)((500)*(32000000UL/4000.0)));
+        PORTAbits.RA2 = 1;
+        _delay((unsigned long)((1000)*(32000000UL/4000.0)));
+        PORTAbits.RA2 = 0;
+        _delay((unsigned long)((1000)*(32000000UL/4000.0)));
     }
 
     return;

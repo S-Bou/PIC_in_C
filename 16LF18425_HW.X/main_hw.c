@@ -50,16 +50,17 @@
 void main(void) {
 // This code example illustrates initializing the PORTA register.
 // The other ports are initialized in the same manner.
+    
     PORTA = 0x00;   // Clear PORTA
     LATA = 0x00;    // Clear Data Latch
     ANSELA = 0x00;  // Enable digital drivers
     TRISA = 0x38;   // Set RA[5:3] as inputs and set others as outputs = --111000
     
     while(1){
-        PORTA = 0x04;
-        __delay_ms(500);
-        PORTA = 0x04;
-        __delay_ms(500);
+        PORTAbits.RA2 = 1;
+        __delay_ms(1000);
+        PORTAbits.RA2 = 0;
+        __delay_ms(1000);
     }
     
     return;

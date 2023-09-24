@@ -12,6 +12,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "546
 [; ;D:/Programas/Microchip/MPLABX/v6.05/packs/Microchip/PIC16F1xxxx_DFP/1.15.191/xc8\pic\include\proc\pic16lf18425.h: 546: extern volatile unsigned char TRISA __attribute__((address(0x012)));
 [v _TRISA `Vuc ~T0 @X0 0 e@18 ]
+"452
+[; ;D:/Programas/Microchip/MPLABX/v6.05/packs/Microchip/PIC16F1xxxx_DFP/1.15.191/xc8\pic\include\proc\pic16lf18425.h: 452:     struct {
+[s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S33 . RA0 RA1 RA2 RA3 RA4 RA5 ]
+"451
+[; ;D:/Programas/Microchip/MPLABX/v6.05/packs/Microchip/PIC16F1xxxx_DFP/1.15.191/xc8\pic\include\proc\pic16lf18425.h: 451: typedef union {
+[u S32 `S33 1 ]
+[n S32 . . ]
+"461
+[; ;D:/Programas/Microchip/MPLABX/v6.05/packs/Microchip/PIC16F1xxxx_DFP/1.15.191/xc8\pic\include\proc\pic16lf18425.h: 461: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
+[v _PORTAbits `VS32 ~T0 @X0 0 e@12 ]
 [v F183 `(v ~T0 @X0 1 tf1`ul ]
 "12 D:/Programas/Microchip/MPLABX/v6.05/packs/Microchip/PIC16F1xxxx_DFP/1.15.191/xc8\pic\include\builtins.h
 [v __delay `JF183 ~T0 @X0 0 e ]
@@ -1373,44 +1384,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _main ]
 [f ]
-"53
-[; ;main_hw.c: 53:     PORTA = 0x00;
-[e = _PORTA -> -> 0 `i `uc ]
 "54
-[; ;main_hw.c: 54:     LATA = 0x00;
-[e = _LATA -> -> 0 `i `uc ]
+[; ;main_hw.c: 54:     PORTA = 0x00;
+[e = _PORTA -> -> 0 `i `uc ]
 "55
-[; ;main_hw.c: 55:     ANSELA = 0x00;
-[e = _ANSELA -> -> 0 `i `uc ]
+[; ;main_hw.c: 55:     LATA = 0x00;
+[e = _LATA -> -> 0 `i `uc ]
 "56
-[; ;main_hw.c: 56:     TRISA = 0x38;
+[; ;main_hw.c: 56:     ANSELA = 0x00;
+[e = _ANSELA -> -> 0 `i `uc ]
+"57
+[; ;main_hw.c: 57:     TRISA = 0x38;
 [e = _TRISA -> -> 56 `i `uc ]
-"58
-[; ;main_hw.c: 58:     while(1){
+"59
+[; ;main_hw.c: 59:     while(1){
 [e :U 1420 ]
 {
-"59
-[; ;main_hw.c: 59:         PORTA = 0x04;
-[e = _PORTA -> -> 4 `i `uc ]
 "60
-[; ;main_hw.c: 60:         _delay((unsigned long)((500)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+[; ;main_hw.c: 60:         PORTAbits.RA2 = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
 "61
-[; ;main_hw.c: 61:         PORTA = 0x04;
-[e = _PORTA -> -> 4 `i `uc ]
+[; ;main_hw.c: 61:         _delay((unsigned long)((1000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
 "62
-[; ;main_hw.c: 62:         _delay((unsigned long)((500)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+[; ;main_hw.c: 62:         PORTAbits.RA2 = 0;
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
 "63
-[; ;main_hw.c: 63:     }
+[; ;main_hw.c: 63:         _delay((unsigned long)((1000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"64
+[; ;main_hw.c: 64:     }
 }
 [e :U 1419 ]
 [e $U 1420  ]
 [e :U 1421 ]
-"65
-[; ;main_hw.c: 65:     return;
-[e $UE 1418  ]
 "66
-[; ;main_hw.c: 66: }
+[; ;main_hw.c: 66:     return;
+[e $UE 1418  ]
+"67
+[; ;main_hw.c: 67: }
 [e :UE 1418 ]
 }
